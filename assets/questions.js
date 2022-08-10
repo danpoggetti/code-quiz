@@ -47,7 +47,7 @@ var penalty = 10;
 // Creates new element
 var ulCreate = document.createElement("ul");
 
-// Triggers timer on button, shows user a display on the screen
+// Begins timer onclick, prompts a display to user
 timer.addEventListener("click", function () {
     // We are checking zero because its originally set to zero
     if (holdInterval === 0) {
@@ -65,19 +65,19 @@ timer.addEventListener("click", function () {
     render(questionIndex);
 });
 
-// Renders questions and choices to page: 
+// Will display questions and choices to page: 
 function render(questionIndex) {
-    // Clears existing data 
+    // Clears data if any existed 
     questionsDiv.innerHTML = "";
     ulCreate.innerHTML = "";
-    // For loops to loop through all info in array
+    // For loops section
     for (var i = 0; i < questions.length; i++) {
         // Appends question title only
         var userQuestion = questions[questionIndex].title;
         var userChoices = questions[questionIndex].choices;
         questionsDiv.textContent = userQuestion;
     }
-    // New for each for question choices
+    // New questions for each choice
     userChoices.forEach(function (newItem) {
         var listItem = document.createElement("li");
         listItem.textContent = newItem;
@@ -86,3 +86,37 @@ function render(questionIndex) {
         listItem.addEventListener("click", (compare));
     })
 }
+
+// Creates what happens if answer is correct or incorrect with penalty and display
+function compare(event) {
+    var element = event.target;
+
+    if (element.matches("li")) {
+
+        var createDiv = document.createElement("div");
+        createDiv.setAttribute("id", "createDiv");
+        // Correct condition
+        if (element.textContent == questions[questionIndex].answer) {
+            score++;
+            createDiv.textContent = "Yes! The answer is:  " + questions[questionIndex].answer;
+            // Correct condition
+        } else {
+            // Will deduct -5 seconds off secondsLeft for wrong answers
+            secondsLeft = secondsLeft - penalty;
+            createDiv.textContent = "Sorry! The correct answer is:  " + questions[questionIndex].answer;
+        }
+
+    }
+    // Question Index determines number question user is on
+    questionIndex++;
+
+    if (questionIndex >= questions.length) {
+        // All done will append last page with user stats
+        allDone();
+        createDiv.textContent = "Congratualations, the quiz is done!" + " " + "You got " + score + "/" + questions.length + " correct!";
+    } else {
+        render(questionIndex);
+    }
+    questionsDiv.appendChild(createDiv);
+}
+
