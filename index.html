@@ -11,23 +11,26 @@
     <!-- Insert A link to high score page-->
     <a href="./highscore.html">View High Scores</a>
     
-    <!-- Add a wrapper here -->
+    <!-- Add a wrapper here easter egg DP here -->
+    <div id="wrapper">
 
-    <!-- Add a div for timer countdown showing time-->
+        <!-- Quiz timer -->
+        <div id="currentTime"></div>
 
-    <!-- Part where questions and text will be added -->
-    <div id="questionsDiv">
-        <h1>Coding Quiz Challenge</h1>
-        <p>Welcome to the Coding Quiz Challenge! Try your best to answer these code-related questions before time expires!</p>
-        <p>A few things to know. A new question will be reveleaed when you click your choice. Heede my warning, incorrect answers will deduct your total score and penalize your time by ten seconds! </p>
-        <p>Good Luck!</p>
-        <ul id="choicesUl"></ul>
+        <!-- Main quiz area -->
+        <div id="questionsDiv">
+            <h1>Coding Quiz Challenge</h1>
+            <p>Welcome to the Coding Quiz Challenge! Try your best to answer these code-related questions before time expires!</p>
+            <p>A few things to know. A new question will be reveleaed when you click your choice. Heede my warning, incorrect answers will deduct your total score and penalize your time by ten seconds! </p>
+            <p>Good Luck!</p>
+            <ul id="choicesUl"></ul>
 
-    <!-- A button to start the quiz -->
-        <button id="startTime">Start Quiz!</button>
+            <!-- A button to start the quiz -->
+            <button id="startTime">Start Quiz!</button>
+        </div>
     </div>
 
-    <!-- Insert JS question src link below -->
+    <!-- JS question link to bring it together -->
     <script src="./assets/questions.js"></script>
 
 </body>
