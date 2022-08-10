@@ -1,3 +1,9 @@
+/* Page Colors */
+:root {
+    --bright: #982000;
+    --light: white;
+}
+
 #wrapper {
     position: absolute;
     left: 30%;
@@ -27,13 +33,13 @@ h1 {
 }
 
 li {
-    background-color: #982000;
+    background-color: var(--bright);
     margin-top: 10px;
     padding: 10px;
     text-align: left;
     border-radius: 15px;
     font-size: 20px;
-    color: white;
+    color: var(--light);
     top: 30%;
     left: 55%;
     width: auto;
@@ -41,11 +47,11 @@ li {
 }
 
 #startTime {
-    background-color: #982000;
+    background-color: var(--bright);
     padding: 15px 32px;
     font-size: 25px;
     word-spacing: 5px;
-    color: white;
+    color: var(--light);
     border-radius: 25px;
 }
 
@@ -56,10 +62,10 @@ button {
 }
 
 #goBack {
-    background-color: #982000;
+    background-color: var(--bright);
     padding: 10px;
     font-size: 20px;
-    color: white;
+    color: var(--light);
     top: 30%;
     left: 55%;
     width: auto;
@@ -69,10 +75,10 @@ button {
 }
 
 #clear {
-    background-color: #982000;
+    background-color: var(--bright);
     padding: 10px;
     font-size: 20px;
-    color: white;
+    color: var(--light);
     top: 30%;
     right: 55%;
     text-align: center;
@@ -85,9 +91,9 @@ textarea {
 }
 
 #Submit {
-    background-color: #982000;
+    background-color: var(--bright);
     font-size: 15px;
-    color: white;
+    color: var(--light);
 }
 
 input {
@@ -98,7 +104,7 @@ input {
 
 #createDiv {
     margin-top: 5px;
-    border-top: 1px solid #982000;
+    border-top: 1px solid var(--bright);
     padding-top: 15px;
 }
 
