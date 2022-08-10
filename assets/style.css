@@ -22,6 +22,24 @@
     text-align: center;
 }
 
+h1 {
+    text-align: center;
+}
+
+li {
+    background-color: #982000;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: left;
+    border-radius: 15px;
+    font-size: 20px;
+    color: white;
+    top: 30%;
+    left: 55%;
+    width: auto;
+    text-decoration: none;
+}
+
 #startTime {
     background-color: #982000;
     padding: 15px 32px;
@@ -29,4 +47,10 @@
     word-spacing: 5px;
     color: white;
     border-radius: 25px;
+}
+
+button {
+    border-radius: 25px;
+    list-style-position: inside;
+    font-weight: bold;
 }
