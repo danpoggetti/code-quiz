@@ -54,3 +54,38 @@ button {
     list-style-position: inside;
     font-weight: bold;
 }
+
+#goBack {
+    background-color: #982000;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    top: 30%;
+    left: 55%;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#clear {
+    background-color: #982000;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    top: 30%;
+    right: 55%;
+    text-align: center;
+    font-weight: bold;
+}
+
+textarea {
+    width: 90%;
+    margin: 20px;
+}
+
+#Submit {
+    background-color: #982000;
+    font-size: 15px;
+    color: white;
+}
