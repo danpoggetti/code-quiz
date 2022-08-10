@@ -89,3 +89,15 @@ textarea {
     font-size: 15px;
     color: white;
 }
+
+input {
+    margin-bottom: 20px;
+    width: 30%;
+    border: 2px solid lightslategrey;
+}
+
+#creatDiv {
+    margin-top: 5px;
+    border-top: 1px solid #982000;
+    padding-top: 15px;
+}
