@@ -17,6 +17,14 @@ GitHub is where the updated files are published.
 Installation on 
 
 ## Screenshot
+![](./assets/images/screen-shot-1.jpg)
+![](./assets/images/screen-shot-2.jpg)
+![](./assets/images/screen-shot-3.jpg)
+![](./assets/images/screen-shot-4.jpg)
+![](./assets/images/screen-shot-5.jpg)
+![](./assets/images/screen-shot-6.jpg)
+![](./assets/images/screen-shot-7.jpg)
+![](./assets/images/screen-shot-8.jpg)
 
 ## Credit
 In order for completing the task, I used many resources. To give credit where credit is due, those sourcess are: Google, W3.
