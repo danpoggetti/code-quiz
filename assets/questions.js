@@ -26,6 +26,7 @@ var questions = [{
     },
 
 ];
+
 // Declared variables
 var score = 0;
 var questionIndex = 0;
@@ -84,116 +85,4 @@ function render(questionIndex) {
         ulCreate.appendChild(listItem);
         listItem.addEventListener("click", (compare));
     })
-}
-// Event to compare choices with answer
-function compare(event) {
-    var element = event.target;
-
-    if (element.matches("li")) {
-
-        var createDiv = document.createElement("div");
-        createDiv.setAttribute("id", "createDiv");
-        // Correct condition 
-        if (element.textContent == questions[questionIndex].answer) {
-            score++;
-            createDiv.textContent = "Yes! The answer is:  " + questions[questionIndex].answer;
-            // Correct condition 
-        } else {
-            // Will deduct -5 seconds off secondsLeft for wrong answers
-            secondsLeft = secondsLeft - penalty;
-            createDiv.textContent = "Sorry! The correct answer is:  " + questions[questionIndex].answer;
-        }
-
-    }
-    // Question Index determines number question user is on
-    questionIndex++;
-
-    if (questionIndex >= questions.length) {
-        // All done will append last page with user stats
-        allDone();
-        createDiv.textContent = "Congratualations, the quiz is done!" + " " + "You got " + score + "/" + questions.length + " correct!";
-    } else {
-        render(questionIndex);
-    }
-    questionsDiv.appendChild(createDiv);
-
-}
-// All done will append last page
-function allDone() {
-    questionsDiv.innerHTML = "";
-    currentTime.innerHTML = "";
-
-    // Heading:
-    var createH1 = document.createElement("h1");
-    createH1.setAttribute("id", "createH1");
-    createH1.textContent = "Hooray! You finished the quiz!"
-
-    questionsDiv.appendChild(createH1);
-
-    // Paragraph
-    var createP = document.createElement("p");
-    createP.setAttribute("id", "createP");
-
-    questionsDiv.appendChild(createP);
-
-    // Calculates time remaining and replaces it with score
-    if (secondsLeft >= 0) {
-        var timeRemaining = secondsLeft;
-        var createP2 = document.createElement("p");
-        clearInterval(holdInterval);
-        createP.textContent = "Your final score is: " + timeRemaining;
-
-        questionsDiv.appendChild(createP2);
-    }
-
-    // Label
-    var createLabel = document.createElement("label");
-    createLabel.setAttribute("id", "createLabel");
-    createLabel.textContent = "Kindly enter your initials and click submit to see how you compare to others: ";
-    questionsDiv.appendChild(createLabel);
-
-    // input
-    var createInput = document.createElement("input");
-    createInput.setAttribute("type", "text");
-    createInput.setAttribute("id", "initials");
-    createInput.textContent = "";
-    questionsDiv.appendChild(createInput);
-
-    // submit
-    var createSubmit = document.createElement("button");
-    createSubmit.setAttribute("type", "submit");
-    createSubmit.setAttribute("id", "Submit");
-    createSubmit.textContent = "Submit";
-    questionsDiv.appendChild(createSubmit);
-
-    // Event listener to capture initials and local storage for initials and score
-    createSubmit.addEventListener("click", function () {
-        var initials = createInput.value;
-
-        if (initials === null) {
-
-            console.log("No value entered!");
-
-        } else {
-            var finalScore = {
-                initials: initials,
-                score: timeRemaining
-            }
-            console.log(finalScore);
-            var allScores = localStorage.getItem("allScores");
-            if (allScores === null) {
-                allScores = [];
-            } else {
-                allScores = JSON.parse(allScores);
-            }
-
-            allScores.push(finalScore);
-            var newScore = JSON.stringify(allScores);
-            localStorage.setItem("allScores", newScore);
-            console.log(allScores)
-            // Travels to final page
-            window.location.replace("highScore.html");
-        }
-    });
-
 }
