@@ -113,7 +113,7 @@ function compare(event) {
     if (questionIndex >= questions.length) {
         // All done will append last page with user stats
         allDone();
-        createDiv.textContent = "Congratualations, the quiz is done!" + " " + "You got " + score + "/" + questions.length + " correct!";
+        createDiv.textContent = "Congratulations, the quiz is done!" + " " + "You got " + score + "/" + questions.length + " correct!";
     } else {
         render(questionIndex);
     }
