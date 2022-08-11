@@ -194,7 +194,7 @@ function allDone() {
             localStorage.setItem("allScores", newScore);
             console.log(allScores)
             // Travels to final page
-            window.location.replace("highScore.html");
+            window.location.replace("highscore.html");
         }
     });
 
