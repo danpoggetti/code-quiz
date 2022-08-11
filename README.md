@@ -14,7 +14,7 @@ You can view files using Visual Studio Code on your terminal or computer.
 VS Code was used to make edits to the HTML and CSS files.
 GitBash was used to push the files to the repository.
 GitHub is where the updated files are published.
-Installation on 
+Installation on https://danpoggetti.github.io/code-quiz/
 
 ## Screenshot
 ![](./assets/images/screen-shot-1.jpg)
